@@ -10,7 +10,7 @@ void DisplayArray(int array[],int sizeOfArray)
 
 void SearchByIndexNumber(int array[],int sizeOfArray)
 {
-	int indexNumber;5
+	int indexNumber;
 	cout<<"\nEnter the Index Number Between 0 and "<<sizeOfArray<<endl;
 	cin>>indexNumber;
 	cout<<"Element on the entered Index Number is :"<<array[indexNumber-1];
@@ -18,10 +18,11 @@ void SearchByIndexNumber(int array[],int sizeOfArray)
 void Searching(int array[],int sizeOfArray)
 {
 	int choice;
-	cout<<"\n\n1. Search by INDEX Number ";
-	cout<<"\n2. Search by  number ";
-	cout<<"\n3. Enter a number and find how many duplicates ";
-	cout<<"\n4. Display all the unique numbers and how many times they are repeated ";
+	cout<<"\n\nOPTIONS";
+	cout<<"\n1. Search by INDEX Number ";
+	//cout<<"\n2. Search by  number ";
+	//cout<<"\n3. Enter a number and find how many duplicates ";
+	//cout<<"\n4. Display all the unique numbers and how many times they are repeated ";
 	cout<<"\nEnter your choice : ";
 	cin>>choice;
 	switch(choice)
@@ -55,7 +56,7 @@ void Sorting(int array[],int sizeOfArray)
 		//AscendingOrder(array);
 		break;
 		case 2:
-	//	DescendingOrder(array);
+		//DescendingOrder(array);
 		break;
 		case 3:
 		//DeleteNumber(array);
@@ -80,7 +81,10 @@ int main()
 	}
 	
 	DisplayArray(array,sizeOfArray);
-	cout<<"\n\nOPTIONS \n1. SEARCHING\n2. SORTING / ARRANGING\nENTER YOUR CHOISE : ";
+	cout<<"\n\nOPTIONS ";
+	cout<<"\n1. SEARCHING";
+	//cout<<"\n2. SORTING / ARRANGING";
+	cout<<"\nENTER YOUR CHOISE : ";
 	cin>>choice;
 	switch(choice)
 	{
@@ -88,7 +92,7 @@ int main()
 		Searching(array,sizeOfArray);
 		break;
 		case 2:
-		Sorting(array,sizeOfArray);
+		//Sorting(array,sizeOfArray);
 		break;
 	}
 }
