@@ -15,12 +15,26 @@ void SearchByIndexNumber(int array[],int sizeOfArray)
 	cin>>indexNumber;
 	cout<<"Element on the entered Index Number is :"<<array[indexNumber-1];
 }
+void SearchByNumber(int array[],int sizeOfArray)
+{
+	int number;
+	cout<<"\nEnter a number between 1-9 to search : ";
+	cin>>number;
+	for(int i=0; i<sizeOfArray; i++)
+	{
+		if(array[i]==number)
+		{
+			cout<<"\nNumber found in Index number "<<i+1;
+			break;
+		}
+	}
+}
 void Searching(int array[],int sizeOfArray)
 {
 	int choice;
 	cout<<"\n\nOPTIONS";
 	cout<<"\n1. Search by INDEX Number ";
-	//cout<<"\n2. Search by  number ";
+	cout<<"\n2. Search by  number ";
 	//cout<<"\n3. Enter a number and find how many duplicates ";
 	//cout<<"\n4. Display all the unique numbers and how many times they are repeated ";
 	cout<<"\nEnter your choice : ";
@@ -31,7 +45,7 @@ void Searching(int array[],int sizeOfArray)
 		SearchByIndexNumber(array,sizeOfArray);
 		break;
 		case 2:
-	//	SearchByNumber(array);
+		SearchByNumber(array,sizeOfArray);
 		break;
 		case 3:
 		//SearchDuplicates(array);
