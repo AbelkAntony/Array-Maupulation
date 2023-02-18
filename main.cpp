@@ -1,13 +1,15 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+//function to display array
 void DisplayArray(int array[],int sizeOfArray)
 {
 	cout<<"\n The array is = ";
 	for(int i=0; i<sizeOfArray; i++)
 		cout<<" "<<array[i];
 }
-
+//function to search by Array index number
 void SearchByIndexNumber(int array[],int sizeOfArray)
 {
 	int indexNumber;
@@ -15,6 +17,7 @@ void SearchByIndexNumber(int array[],int sizeOfArray)
 	cin>>indexNumber;
 	cout<<"Element on the entered Index Number is :"<<array[indexNumber-1];
 }
+//function to search by number in array 
 void SearchByNumber(int array[],int sizeOfArray)
 {
 	int number;
@@ -29,6 +32,7 @@ void SearchByNumber(int array[],int sizeOfArray)
 		}
 	}
 }
+//function for search duplicate number which entered by user
 void SearchDuplicates(int array[],int sizeOfArray)
 {
 	int number;
@@ -45,7 +49,7 @@ void SearchDuplicates(int array[],int sizeOfArray)
 	}
 	cout<<"\n\nNumber "<<number<<" found "<<numberCount<<" time in the Array ";
 }
-
+//function for dispaly the cout of number repeating
 void DisplayRepeatation(int array[],int sizeOfArray)
 {
 	int numberCount=0;
@@ -67,9 +71,12 @@ void DisplayRepeatation(int array[],int sizeOfArray)
 	}
 		
 }
+//function for searching
 void Searching(int array[],int sizeOfArray)
 {
+	//variables
 	int choice;
+	//display options in searching functions
 	cout<<"\n\nOPTIONS";
 	cout<<"\n1. Search by INDEX Number ";
 	cout<<"\n2. Search by  number ";
@@ -80,15 +87,19 @@ void Searching(int array[],int sizeOfArray)
 	switch(choice)
 	{
 		case 1:
+		//function call for search number by index	
 		SearchByIndexNumber(array,sizeOfArray);
 		break;
 		case 2:
+		//function call for search by number		
 		SearchByNumber(array,sizeOfArray);
 		break;
 		case 3:
+		//function call for search duplicates number		
 		SearchDuplicates(array,sizeOfArray);
 		break;
 		case 4:
+		//function call for display how many times a number repeating
 		DisplayRepeatation(array,sizeOfArray);
 		break;
 	}
@@ -121,18 +132,23 @@ void Sorting(int array[],int sizeOfArray)
 int main() 
 {
 	srand(time(0));
+	//variables
 	int sizeOfArray;
 	int choice;
+	//user input to set the length of the array
 	cout <<"Enter the number of items : ";
 	cin>>sizeOfArray;
+	//creating arry with the length inputed by the user
 	int array[sizeOfArray];
+	//inputing array element by random numbers
 	for(int i=0 ; i<sizeOfArray ; i++)
 	{
 		//cout << (rand() % (ub - lb + 1)) + lb << " ";
 		array[i]=(rand()%(9-1+1))+1;
 	}
-	
+	//displaying randomly generated array
 	DisplayArray(array,sizeOfArray);
+	//display option for searching or sorting
 	cout<<"\n\nOPTIONS ";
 	cout<<"\n1. SEARCHING";
 	//cout<<"\n2. SORTING / ARRANGING";
@@ -141,9 +157,11 @@ int main()
 	switch(choice)
 	{
 		case 1:
+		//functon call for searching option	
 		Searching(array,sizeOfArray);
 		break;
 		case 2:
+		//function call for sorting array
 		//Sorting(array,sizeOfArray);
 		break;
 	}
