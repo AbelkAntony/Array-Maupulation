@@ -45,6 +45,23 @@ void SearchDuplicates(int array[],int sizeOfArray)
 	}
 	cout<<"\n\nNumber "<<number<<" found "<<numberCount<<" time in the Array ";
 }
+
+void DisplayRepeatation(int array[],int sizeOfArray)
+{
+	int numberCount=0;
+	cout<<"Unique numbers and how many times they are repeated";
+	for(int x=0; x<=9; x++)
+		{
+		for(int i=0; i<sizeOfArray; i++)
+			{
+				if(array[i]==x)
+				{
+					numberCount +=1;
+				}
+			}
+		}
+		
+}
 void Searching(int array[],int sizeOfArray)
 {
 	int choice;
@@ -52,7 +69,7 @@ void Searching(int array[],int sizeOfArray)
 	cout<<"\n1. Search by INDEX Number ";
 	cout<<"\n2. Search by  number ";
 	cout<<"\n3. Enter a number and find how many duplicates ";
-	//cout<<"\n4. Display all the unique numbers and how many times they are repeated ";
+	cout<<"\n4. Display all the unique numbers and how many times they are repeated ";
 	cout<<"\nEnter your choice : ";
 	cin>>choice;
 	switch(choice)
@@ -67,7 +84,7 @@ void Searching(int array[],int sizeOfArray)
 		SearchDuplicates(array,sizeOfArray);
 		break;
 		case 4:
-		//DisplayRepeatation(array,sizeOfArray);
+		DisplayRepeatation(array,sizeOfArray);
 		break;
 	}
 }
