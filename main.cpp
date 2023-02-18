@@ -18,6 +18,20 @@ void SearchByIndexNumber(int array[],int sizeOfArray)
 void SearchByNumber(int array[],int sizeOfArray)
 {
 	int number;
+	cout<<"\nEnter a number between 1-9 to search : ";
+	cin>>number;
+	for(int i=0; i<sizeOfArray; i++)
+	{
+		if(array[i]==number)
+		{
+			cout<<"\nNumber found in Index number "<<i+1;
+			break;
+		}
+	}
+}
+void SearchDuplicates(int array[],int sizeOfArray)
+{
+	int number;
 	int numberCount=0;
 	cout<<"\nEnter a number between 1-9 to search : ";
 	cin>>number;
@@ -50,10 +64,10 @@ void Searching(int array[],int sizeOfArray)
 		SearchByNumber(array,sizeOfArray);
 		break;
 		case 3:
-		//SearchDuplicates(array);
+		SearchDuplicates(array,sizeOfArray);
 		break;
 		case 4:
-		//DisplayRepeatation(array);
+		//DisplayRepeatation(array,sizeOfArray);
 		break;
 	}
 }
@@ -69,16 +83,16 @@ void Sorting(int array[],int sizeOfArray)
 	switch(choice)
 	{
 		case 1:
-		//AscendingOrder(array);
+		//AscendingOrder(array,sizeOfArray);
 		break;
 		case 2:
-		//DescendingOrder(array);
+		//DescendingOrder(array,sizeOfArray);
 		break;
 		case 3:
-		//DeleteNumber(array);
+		//DeleteNumber(array,sizeOfArray);
 		break;
 		case 4:
-		//DeleteDuplication(array);
+		//DeleteDuplication(array,sizeOfArray);
 		break;
 	}
 }
