@@ -18,6 +18,7 @@ void SearchByIndexNumber(int array[],int sizeOfArray)
 void SearchByNumber(int array[],int sizeOfArray)
 {
 	int number;
+	int numberCount=0;
 	cout<<"\nEnter a number between 1-9 to search : ";
 	cin>>number;
 	for(int i=0; i<sizeOfArray; i++)
@@ -25,9 +26,10 @@ void SearchByNumber(int array[],int sizeOfArray)
 		if(array[i]==number)
 		{
 			cout<<"\nNumber found in Index number "<<i+1;
-			break;
+			numberCount +=1;
 		}
 	}
+	cout<<"\n\nNumber "<<number<<" found "<<numberCount<<" time in the Array ";
 }
 void Searching(int array[],int sizeOfArray)
 {
