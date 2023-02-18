@@ -24,7 +24,7 @@ void SearchByNumber(int array[],int sizeOfArray)
 	{
 		if(array[i]==number)
 		{
-			cout<<"\nNumber found in Index number "<<i+1;
+			cout<<"\nNumber found in the Array";
 			break;
 		}
 	}
@@ -51,7 +51,7 @@ void Searching(int array[],int sizeOfArray)
 	cout<<"\n\nOPTIONS";
 	cout<<"\n1. Search by INDEX Number ";
 	cout<<"\n2. Search by  number ";
-	//cout<<"\n3. Enter a number and find how many duplicates ";
+	cout<<"\n3. Enter a number and find how many duplicates ";
 	//cout<<"\n4. Display all the unique numbers and how many times they are repeated ";
 	cout<<"\nEnter your choice : ";
 	cin>>choice;
