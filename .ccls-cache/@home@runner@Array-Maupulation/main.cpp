@@ -52,7 +52,6 @@ void SearchDuplicates(int array[],int sizeOfArray)
 	{
 		if(array[i]==number)
 		{
-			cout<<"\nNumber found in Index number "<<i+1;
 			numberCount +=1;
 		}
 	}
@@ -63,21 +62,32 @@ void DisplayRepeatation(int array[],int sizeOfArray)
 {
 	int numberCount=0;
 	cout<<"Unique numbers and how many times they are repeated";
-	for(int x=1; x<=9; x++)
+	while(sizeOfArray>0)
 	{
-		for(int i=0; i<sizeOfArray; i++)
+		for(int j=0; j<sizeOfArray; j++)
 		{
-			if(array[i]==x)
+			if(array[0]==array[j])
 			{
 				numberCount +=1;
 			}
 		}
-		if(numberCount !=0)
-		{
-			cout<<"\n"<<x<<" repeats "<<numberCount<<" times in Array";
-		}
+		cout<<endl<<array[0]<<" repeats "<<numberCount<<" times ";
 		numberCount=0;
+		int temp = array[0];
+		for(int x=0; x<sizeOfArray; x++)
+		{
+			if(array[x]==temp)
+			{
+				for(int y=x;y<sizeOfArray;y++)
+				{
+					array[y]=array[y+1];
+				}
+				x -=1;
+				sizeOfArray -=1;
+			}
+		}
 	}
+	
 		
 }
 //function for searching
@@ -185,16 +195,24 @@ int main()
 	//variables
 	int sizeOfArray;
 	int choice;
+	int upperLimit;
+	int lowerLimit;
 	//user input to set the length of the array
 	cout <<"Enter the number of items : ";
 	cin>>sizeOfArray;
 	//creating arry with the length inputed by the user
 	int array[sizeOfArray];
+	//GETTING LOWER LIMIT
+	cout<<"\nEnter the lower limit of the number : ";
+	cin>>lowerLimit;
+	//GETTING UPPER LIMIT
+	cout<<"Enter the upper limit of the number : ";
+	cin>>upperLimit;
 	//inputing array element by random numbers
 	for(int i=0 ; i<sizeOfArray ; i++)
 	{
 		//cout << (rand() % (ub - lb + 1)) + lb << " ";
-		array[i]=(rand()%(9-1+1))+1;
+		array[i]=(rand()%(upperLimit-lowerLimit+1))+lowerLimit;
 	}
 	//displaying randomly generated array
 	DisplayArray(array,sizeOfArray);
