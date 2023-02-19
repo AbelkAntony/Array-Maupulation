@@ -15,7 +15,7 @@ void SearchByIndexNumber(int array[],int sizeOfArray)
 	int indexNumber;
 	cout<<"\nEnter the Index Number Between 0 and "<<sizeOfArray<<endl;
 	cin>>indexNumber;
-	if(indexNumber>0 && indexNumber<sizeOfArray)
+	if(indexNumber>=0 && indexNumber<sizeOfArray)
 		cout<<"Element on the entered Index Number is :"<<array[indexNumber-1];
 	else
 		cout<<"\nInvalid Index Number";
