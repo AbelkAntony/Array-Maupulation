@@ -15,11 +15,15 @@ void SearchByIndexNumber(int array[],int sizeOfArray)
 	int indexNumber;
 	cout<<"\nEnter the Index Number Between 0 and "<<sizeOfArray<<endl;
 	cin>>indexNumber;
-	cout<<"Element on the entered Index Number is :"<<array[indexNumber-1];
+	if(indexNumber>0 && indexNumber<sizeOfArray)
+		cout<<"Element on the entered Index Number is :"<<array[indexNumber-1];
+	else
+		cout<<"\nInvalid Index Number";
 }
 //function to search by number in array 
 void SearchByNumber(int array[],int sizeOfArray)
 {
+	bool found= false;
 	int number;
 	cout<<"\nEnter a number between 1-9 to search : ";
 	cin>>number;
@@ -28,8 +32,13 @@ void SearchByNumber(int array[],int sizeOfArray)
 		if(array[i]==number)
 		{
 			cout<<"\nNumber found in the Array";
+			found = true;
 			break;
 		}
+	}
+	if (found == false)
+	{
+		cout<<"\nNumber not found";
 	}
 }
 //function for search duplicate number which entered by user
@@ -104,6 +113,26 @@ void Searching(int array[],int sizeOfArray)
 		break;
 	}
 }
+
+//finction for ascending order the array
+void AscendingOrder(int array[], int sizeOfArray)
+{
+	cout<<"\nfunction def";
+	int temp=0;
+	for(int i=0; i<sizeOfArray; i++)
+	{
+		for(int j=i+1;j<sizeOfArray;j--)
+		{
+			if(array[j]<array[i])
+			temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+	}
+	DisplayArray(array,sizeOfArray);
+}
+
+//function for sorting
 void Sorting(int array[],int sizeOfArray)
 {
 	int choice;
@@ -113,20 +142,26 @@ void Sorting(int array[],int sizeOfArray)
 	cout<<"\n4. Delete all duplication";
 	cout<<"\nEnter your choice : ";
 	cin>>choice;
+	cout<<"\ninput choice";
 	switch(choice)
 	{
 		case 1:
-		//AscendingOrder(array,sizeOfArray);
+		cout<<"\nfunction call";
+		AscendingOrder(array,sizeOfArray);
 		break;
-		case 2:
-		//DescendingOrder(array,sizeOfArray);
-		break;
-		case 3:
+			
+		
+		//case 2:
+		//Desce/ndingOrder(array,sizeOfArray);
+		//break;
+		//case 3:
 		//DeleteNumber(array,sizeOfArray);
-		break;
-		case 4:
+		//break;
+		//case 4:
 		//DeleteDuplication(array,sizeOfArray);
-		break;
+		//break;
+		default:
+		cout<<"no option found";
 	}
 }
 int main() 
@@ -151,7 +186,7 @@ int main()
 	//display option for searching or sorting
 	cout<<"\n\nOPTIONS ";
 	cout<<"\n1. SEARCHING";
-	//cout<<"\n2. SORTING / ARRANGING";
+	cout<<"\n2. SORTING / ARRANGING";
 	cout<<"\nENTER YOUR CHOISE : ";
 	cin>>choice;
 	switch(choice)
@@ -162,7 +197,7 @@ int main()
 		break;
 		case 2:
 		//function call for sorting array
-		//Sorting(array,sizeOfArray);
+		Sorting(array,sizeOfArray);
 		break;
 	}
 }
