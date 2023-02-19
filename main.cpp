@@ -111,59 +111,74 @@ void Searching(int array[],int sizeOfArray)
 		//function call for display how many times a number repeating
 		DisplayRepeatation(array,sizeOfArray);
 		break;
+		default:
+		cout<<"\nINVALID INPUT";
 	}
 }
 
-//finction for ascending order the array
-void AscendingOrder(int array[], int sizeOfArray)
+//function defenition of delete duplication
+void DeleteDuplication(int array[],int sizeOfArray)
 {
-	cout<<"\nfunction def";
-	int temp=0;
-	for(int i=0; i<sizeOfArray; i++)
+	for(int i=0;i<sizeOfArray;i++)
 	{
-		for(int j=i+1;j<sizeOfArray;j--)
+		for(int j=i+1;j<sizeOfArray;j++)
 		{
-			if(array[j]<array[i])
-			temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
+			if(array[i]==array[j])
+			{
+				for(int k=j;k<sizeOfArray;k++)
+				{
+					array[k]=array[k+1];
+				}
+				j -=1;
+				sizeOfArray -=1;
+			}
 		}
 	}
 	DisplayArray(array,sizeOfArray);
 }
 
-//function for sorting
-void Sorting(int array[],int sizeOfArray)
+//function defenition of Delete number
+void DeleteNumber(int array[],int sizeOfArray)
+{
+	int number;
+	cout<<"\n\nEnter the number to be deleted : ";
+	cin>>number;
+	for(int i=0; i<sizeOfArray; i++)
+	{
+		if(array[i]==number)
+		{
+			for(int j=i;j<sizeOfArray;j++)
+			{
+				array[j]=array[j+1];
+			}
+			i -=1;
+			sizeOfArray -=1;
+		}
+	}
+	DisplayArray(array,sizeOfArray);
+}
+
+//function for deletion function
+void Delete(int array[],int sizeOfArray)
 {
 	int choice;
-	cout<<"\n\n1. Sort the array in ascending order";
-	cout<<"\n2. Sort the array in descending order";
-	cout<<"\n3. Delete a Number from the Array";
-	cout<<"\n4. Delete all duplication";
-	cout<<"\nEnter your choice : ";
+	cout<<"\n\n1. Delete Number";
+	cout<<"\n2. Delete Duplication";
+	cout<<"\nENTER YOUR CHOICE : ";
 	cin>>choice;
-	cout<<"\ninput choice";
 	switch(choice)
 	{
 		case 1:
-		cout<<"\nfunction call";
-		AscendingOrder(array,sizeOfArray);
+		DeleteNumber(array,sizeOfArray);
 		break;
-			
-		
-		//case 2:
-		//Desce/ndingOrder(array,sizeOfArray);
-		//break;
-		//case 3:
-		//DeleteNumber(array,sizeOfArray);
-		//break;
-		//case 4:
-		//DeleteDuplication(array,sizeOfArray);
-		//break;
+		case 2:
+		DeleteDuplication(array,sizeOfArray);
+		break;
 		default:
-		cout<<"no option found";
+		cout<<"\nINVALID INPUT";
 	}
 }
+
 int main() 
 {
 	srand(time(0));
@@ -186,7 +201,7 @@ int main()
 	//display option for searching or sorting
 	cout<<"\n\nOPTIONS ";
 	cout<<"\n1. SEARCHING";
-	cout<<"\n2. SORTING / ARRANGING";
+	cout<<"\n2. DELETION";
 	cout<<"\nENTER YOUR CHOISE : ";
 	cin>>choice;
 	switch(choice)
@@ -197,7 +212,9 @@ int main()
 		break;
 		case 2:
 		//function call for sorting array
-		Sorting(array,sizeOfArray);
+		Delete(array,sizeOfArray);
 		break;
+		default:
+		cout<<"\nINVALID INPUT";
 	}
 }
