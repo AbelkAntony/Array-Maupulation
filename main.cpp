@@ -9,6 +9,35 @@ void DisplayArray(int array[],int sizeOfArray)
 	for(int i=0; i<sizeOfArray; i++)
 		cout<<" "<<array[i];
 }
+
+//FUNCTION TO SPLIT ODD AND EVEN NUMBERS
+void OddAndEven(int array[],int sizeOfArray)
+{
+	int oddArray[sizeOfArray];
+	int oddArrayPosition =0;
+	int evenArray[sizeOfArray];
+	int evenArrayPosition=0;
+	for(int i=0;i<sizeOfArray;i++)
+	{
+		if((array[i]%2)==0)
+		{
+			evenArray[evenArrayPosition] = array[i];
+			evenArrayPosition++;
+		}
+		else
+		{
+			oddArray[oddArrayPosition] = array[i];
+			oddArrayPosition++;
+		}
+	}
+	//DISPLAY ODD ARRAY
+	cout<<"\nARRAY WITH ODD NUMBERS";
+	DisplayArray(oddArray,oddArrayPosition);
+	//DISPALY EVEN ARRAY
+	cout<<"\nARRAY WITH EVEN NUMBERS";
+	DisplayArray(evenArray,evenArrayPosition);
+}
+
 //function to search by Array index number
 void SearchByIndexNumber(int array[],int sizeOfArray)
 {
@@ -220,6 +249,7 @@ int main()
 	cout<<"\n\nOPTIONS ";
 	cout<<"\n1. SEARCHING";
 	cout<<"\n2. DELETION";
+	cout<<"\n3. FIND ODD AND EVEN NUMBERS";
 	cout<<"\nENTER YOUR CHOISE : ";
 	cin>>choice;
 	switch(choice)
@@ -231,6 +261,10 @@ int main()
 		case 2:
 		//function call for sorting array
 		Delete(array,sizeOfArray);
+		break;
+		case 3:
+		//FUNCTION CALL TO DISPLAY ODD AND EVEN NUMBERS
+		OddAndEven(array,sizeOfArray);
 		break;
 		default:
 		cout<<"\nINVALID INPUT";
