@@ -249,7 +249,7 @@ int main()
 	cout<<"\n\nOPTIONS ";
 	cout<<"\n1. SEARCHING";
 	cout<<"\n2. DELETION";
-	cout<<"\n3. FIND ODD AND EVEN NUMBERS";
+	//cout<<"\n3. FIND ODD AND EVEN NUMBERS";
 	cout<<"\nENTER YOUR CHOISE : ";
 	cin>>choice;
 	switch(choice)
