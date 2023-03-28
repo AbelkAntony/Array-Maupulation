@@ -16,6 +16,9 @@ It have features like searching , deletion and seperate odd and even number
 - user can delete duplicate numbers from the array
 
 
+Here is my replit link : https://replit.com/@mrabelantony/Array-Maupulation
+
+
 #ScreenShots
 
 ![Capture1](/ScreenShots/1.png)
